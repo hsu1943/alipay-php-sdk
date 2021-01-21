@@ -1,0 +1,26 @@
+{
+  "name": "ducksoft/alipay-php-sdk",
+  "description": "official alipay php sdk",
+  "type": "library",
+  "homepage": "http://github.com/hsu1943/alipay-php-sdk",
+  "authors": [
+    {
+      "name": "hsu1943",
+      "email": "osnail1943@gmail.com"
+    }
+  ],
+  "keywords": [
+    "alipay",
+    "alipay sdk",
+    "alipay php sdk"
+  ],
+  "lisence": "MIT",
+  "require": {
+    "php": ">=7.1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "duckSoft\\alipay\\": "src"
+    }
+  }
+}
