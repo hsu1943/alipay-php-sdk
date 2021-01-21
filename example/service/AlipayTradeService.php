@@ -4,13 +4,19 @@
  * Date: 18/7/19
  * Time: 下午2:09
  */
-require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'./../../AopSdk.php';
+use duckSoft\alipay\aop\AopClient;
+use duckSoft\alipay\aop\request\AlipayTradeCancelRequest;
+use duckSoft\alipay\aop\request\AlipayTradePayRequest;
+use duckSoft\alipay\aop\request\AlipayTradePrecreateRequest;
+use duckSoft\alipay\aop\request\AlipayTradeQueryRequest;
+use duckSoft\alipay\aop\request\AlipayTradeRefundRequest;
+use duckSoft\alipay\model\builder\AlipayTradeCancelContentBuilder;
+use duckSoft\alipay\model\builder\AlipayTradeQueryContentBuilder;
+
 require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'./../model/result/AlipayF2FPayResult.php';
 require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'../model/result/AlipayF2FQueryResult.php';
 require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'../model/result/AlipayF2FRefundResult.php';
 require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'../model/result/AlipayF2FPrecreateResult.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../model/builder/AlipayTradeQueryContentBuilder.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../model/builder/AlipayTradeCancelContentBuilder.php';
 require dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'../config/config.php';
 
 class AlipayTradeService

@@ -121,18 +121,18 @@ class AlipayTradeRefundContentBuilder extends ContentBuilder
         $this->goodsDetail = $goodsDetail;
         $this->bizContentArr['goods_detail'] = $goodsDetail;
     }
-    //         private $refundRoyaltyParameters[0];
-    //
-    // public function getRefundRoyaltyParameters[0]()
-    // {
-    //     return $this->refundRoyaltyParameters[0];
-    // }
-    //
-    // public function setRefundRoyaltyParameters[0]($refundRoyaltyParameters[0])
-    // {
-    //     $this->refundRoyaltyParameters[0] = $refundRoyaltyParameters[0];
-    //     $this->bizContentArr['refund_royalty_parameters'] = $refundRoyaltyParameters[0];
-    // }
+            private $refundRoyaltyParameters;
+
+    public function getRefundRoyaltyParameters()
+    {
+        return $this->refundRoyaltyParameters;
+    }
+
+    public function setRefundRoyaltyParameters($refundRoyaltyParameters)
+    {
+        $this->refundRoyaltyParameters = $refundRoyaltyParameters;
+        $this->bizContentArr['refund_royalty_parameters'] = $refundRoyaltyParameters;
+    }
             private $outTradeNo;
 
     public function getOutTradeNo()

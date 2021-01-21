@@ -1,15 +1,9 @@
 <?php
-/**
- * User: junying.wei
- * Date: 18/08/05
- * Time: 下午2:09
- */
-require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'./../../AopSdk.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . './../entites/ApiParamModel.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . './../entites/ApiInfoModel.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../model/result/AlipayTradeCloseResult.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../model/builder/AlipayTradeCloseContentBuilder.php';
-require dirname(__FILE__) . DIRECTORY_SEPARATOR . './../config/DefaultAlipayClientFactory.php';
+
+use duckSoft\alipay\aop\request\AlipayTradeCloseRequest;
+use duckSoft\alipay\model\builder\AlipayTradeCloseContentBuilder;
+
+require dirname(__FILE__) . DIRECTORY_SEPARATOR . '../DefaultAlipayClientFactory.php';
 
 $req = new AlipayTradeCloseContentBuilder();
 

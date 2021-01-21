@@ -49,18 +49,18 @@ class AlipayTradeOrderSettleContentBuilder extends ContentBuilder
         $this->tradeNo = $tradeNo;
         $this->bizContentArr['trade_no'] = $tradeNo;
     }
-    //         private $royaltyParameters[0];
-    //
-    // public function getRoyaltyParameters[0]()
-    // {
-    //     return $this->royaltyParameters[0];
-    // }
-    //
-    // public function setRoyaltyParameters[0]($royaltyParameters[0])
-    // {
-    //     $this->royaltyParameters[0] = $royaltyParameters[0];
-    //     $this->bizContentArr['royalty_parameters'] = $royaltyParameters[0];
-    // }
+            private $royaltyParameters;
+
+    public function getRoyaltyParameters()
+    {
+        return $this->royaltyParameters;
+    }
+
+    public function setRoyaltyParameters($royaltyParameters)
+    {
+        $this->royaltyParameters = $royaltyParameters;
+        $this->bizContentArr['royalty_parameters'] = $royaltyParameters;
+    }
             private $operatorId;
 
     public function getOperatorId()

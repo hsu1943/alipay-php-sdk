@@ -4,11 +4,11 @@
  * Date: 18/08/05
  * Time: 下午2:09
  */
+use duckSoft\alipay\entites\ApiInfoModel;
+use duckSoft\alipay\entites\ApiParamModel;
+
 header('Content-Type: application/json');
 
-require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'./../../AopSdk.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . './../entites/ApiParamModel.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . './../entites/ApiInfoModel.php';
 
 $list = array();
 

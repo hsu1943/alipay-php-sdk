@@ -1,21 +1,15 @@
 <?php
-/**
- * User: junying.wei
- * Date: 18/08/05
- * Time: 下午2:09
- */
-require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'./../../AopSdk.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . './../entites/ApiParamModel.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . './../entites/ApiInfoModel.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../model/result/AlipayTradeOrderSettleResult.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../model/builder/AlipayTradeOrderSettleContentBuilder.php';
-require dirname(__FILE__) . DIRECTORY_SEPARATOR . './../config/DefaultAlipayClientFactory.php';
+
+use duckSoft\alipay\aop\request\AlipayTradeOrderSettleRequest;
+use duckSoft\alipay\model\builder\AlipayTradeOrderSettleContentBuilder;
+
+require dirname(__FILE__) . DIRECTORY_SEPARATOR . '../DefaultAlipayClientFactory.php';
 
 $req = new AlipayTradeOrderSettleContentBuilder();
 
 $req->setOutRequestNo($_POST['outRequestNo']);
     $req->setTradeNo($_POST['tradeNo']);
-    $req->setRoyaltyParameters[0]($_POST['royaltyParameters[0]']);
+    $req->setRoyaltyParameters($_POST['royaltyParameters']);
     $req->setOperatorId($_POST['operatorId']);
     
     $request = new AlipayTradeOrderSettleRequest();

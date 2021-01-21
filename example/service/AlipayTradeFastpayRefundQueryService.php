@@ -1,15 +1,9 @@
 <?php
-/**
- * User: junying.wei
- * Date: 18/08/05
- * Time: 下午2:09
- */
-require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'./../../AopSdk.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . './../entites/ApiParamModel.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . './../entites/ApiInfoModel.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../model/result/AlipayTradeFastpayRefundQueryResult.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../model/builder/AlipayTradeFastpayRefundQueryContentBuilder.php';
-require dirname(__FILE__) . DIRECTORY_SEPARATOR . './../config/DefaultAlipayClientFactory.php';
+
+use duckSoft\alipay\aop\request\AlipayTradeFastpayRefundQueryRequest;
+use duckSoft\alipay\model\builder\AlipayTradeFastpayRefundQueryContentBuilder;
+
+require dirname(__FILE__) . DIRECTORY_SEPARATOR . '../DefaultAlipayClientFactory.php';
 
 $req = new AlipayTradeFastpayRefundQueryContentBuilder();
 

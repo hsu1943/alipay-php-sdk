@@ -2,18 +2,14 @@
 
 use duckSoft\alipay\aop\AopClient;
 
-require dirname(__FILE__) . DIRECTORY_SEPARATOR . './AlipayConfig.php';
-
-
 class DefaultAlipayClientFactory {
-
-	/**
-	 * 使用SDK执行提交页面接口请求
-	 * @param unknown $request
-	 * @param string $token
-	 * @param string $appAuthToken
-	 * @return string $$result
-	 */
+    /**
+     * 使用SDK执行提交页面接口请求
+     * @param $request
+     * @param string $token
+     * @param string $appAuthToken
+     * @return string $$result
+     */
 	public function aopClientRequestExecute($request, $token = NULL, $appAuthToken = NULL) {
 		$alipayConfig = new AlipayConfig();
 		$aop = new AopClient ();

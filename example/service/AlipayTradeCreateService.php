@@ -1,16 +1,8 @@
 <?php
-/**
- * User: junying.wei
- * Date: 18/08/05
- * Time: 下午2:09
- */
-    require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'./../../AopSdk.php';
-    require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . './../entites/ApiParamModel.php';
-    require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . './../entites/ApiInfoModel.php';
-    require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../model/result/AlipayTradeCreateResult.php';
-    require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../model/builder/AlipayTradeCreateContentBuilder.php';
-    require dirname(__FILE__) . DIRECTORY_SEPARATOR . './../config/DefaultAlipayClientFactory.php';
-    require dirname(__FILE__) . DIRECTORY_SEPARATOR . './../config/AlipayConfig.php';
+
+use duckSoft\alipay\model\builder\AlipayTradeCreateContentBuilder;
+
+require dirname(__FILE__) . DIRECTORY_SEPARATOR . '../AlipayConfig.php';
 
     $req = new AlipayTradeCreateContentBuilder();
 

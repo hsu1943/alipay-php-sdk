@@ -1,15 +1,9 @@
 <?php
-/**
- * User: junying.wei
- * Date: 18/08/05
- * Time: 下午2:09
- */
-require_once dirname ( __FILE__ ).DIRECTORY_SEPARATOR.'./../../AopSdk.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . './../entites/ApiParamModel.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . './../entites/ApiInfoModel.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../model/result/AlipayTradeRefundResult.php';
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '../model/builder/AlipayTradeRefundContentBuilder.php';
-require dirname(__FILE__) . DIRECTORY_SEPARATOR . './../config/DefaultAlipayClientFactory.php';
+
+use duckSoft\alipay\aop\request\AlipayTradeRefundRequest;
+use duckSoft\alipay\model\builder\AlipayTradeRefundContentBuilder;
+
+require dirname(__FILE__) . DIRECTORY_SEPARATOR . '../DefaultAlipayClientFactory.php';
 
 $req = new AlipayTradeRefundContentBuilder();
 
@@ -21,7 +15,7 @@ $req->setRefundAmount($_POST['refundAmount']);
     $req->setStoreId($_POST['storeId']);
     $req->setTerminalId($_POST['terminalId']);
     $req->setGoodsDetail($_POST['goodsDetail[0]']);
-    $req->setRefundRoyaltyParameters[0]($_POST['refundRoyaltyParameters[0]']);
+    $req->setRefundRoyaltyParameters($_POST['refundRoyaltyParameters']);
     $req->setOutTradeNo($_POST['outTradeNo']);
     $req->setTradeNo($_POST['tradeNo']);
     
