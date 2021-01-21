@@ -6,9 +6,10 @@
  * Time: 18:42
  */
 
-use duckSoft\alipay\aop\DefaultAlipayClientFactory;
 use duckSoft\alipay\aop\request\AlipayTradeQueryRequest;
 use duckSoft\alipay\model\builder\AlipayTradeQueryContentBuilder;
+
+require_once './DefaultAlipayClientFactory.php';
 
 $content = new AlipayTradeQueryContentBuilder();
 

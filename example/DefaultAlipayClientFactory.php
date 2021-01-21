@@ -2,6 +2,8 @@
 
 use duckSoft\alipay\aop\AopClient;
 
+require_once './AlipayConfig.php';
+
 class DefaultAlipayClientFactory {
     /**
      * 使用SDK执行提交页面接口请求
