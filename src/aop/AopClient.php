@@ -146,23 +146,23 @@ class AopClient {
 
     /**
      * RSA单独签名方法，未做字符串处理,字符串处理见getSignContent()
-     * @param $data string 待签名字符串
-     * @param $privateKey string 商户私钥，根据 keyfromfile 来判断是读取字符串还是读取文件，false:填写私钥字符串去回车和空格 true:填写私钥文件路径
-     * @param $signType  string 签名方式，RSA:SHA1     RSA2:SHA256
-     * @param $keyFromFile boolean 私钥获取方式，读取字符串还是读文件
+     * @param $data 待签名字符串
+     * @param $privatekey 商户私钥，根据keyfromfile来判断是读取字符串还是读取文件，false:填写私钥字符串去回车和空格 true:填写私钥文件路径 
+     * @param $signType 签名方式，RSA:SHA1     RSA2:SHA256 
+     * @param $keyfromfile 私钥获取方式，读取字符串还是读文件
      * @return string 
      * @author mengyu.wh
      */
-	public function alonersaSign($data, $privateKey, $signType = "RSA", $keyFromFile=false) {
+	public function alonersaSign($data,$privatekey,$signType = "RSA",$keyfromfile=false) {
 
-		if(!$keyFromFile){
-			$priKey=$privateKey;
+		if(!$keyfromfile){
+			$priKey=$privatekey;
 			$res = "-----BEGIN RSA PRIVATE KEY-----\n" .
 				wordwrap($priKey, 64, "\n", true) .
 				"\n-----END RSA PRIVATE KEY-----";
 		}
 		else{
-			$priKey = file_get_contents($privateKey);
+			$priKey = file_get_contents($privatekey);
 			$res = openssl_get_privatekey($priKey);
 		}
 
@@ -174,7 +174,7 @@ class AopClient {
 			openssl_sign($data, $sign, $res);
 		}
 
-		if($keyFromFile){
+		if($keyfromfile){
 			openssl_free_key($res);
 		}
 		$sign = base64_encode($sign);
@@ -230,20 +230,20 @@ class AopClient {
 
 
 
-		$response = curl_exec($ch);
+		$reponse = curl_exec($ch);
 
 		if (curl_errno($ch)) {
 
-			throw new \Exception(curl_error($ch), 0);
+			throw new Exception(curl_error($ch), 0);
 		} else {
 			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 			if (200 !== $httpStatusCode) {
-				throw new \Exception($response, $httpStatusCode);
+				throw new Exception($reponse, $httpStatusCode);
 			}
 		}
 
 		curl_close($ch);
-		return $response;
+		return $reponse;
 	}
 
 	protected function getMillisecond() {
@@ -664,6 +664,7 @@ class AopClient {
 	function verify($data, $sign, $rsaPublicKeyFilePath, $signType = 'RSA') {
 
 		if($this->checkEmpty($this->alipayPublicKey)){
+
 			$pubKey= $this->alipayrsaPublicKey;
 			$res = "-----BEGIN PUBLIC KEY-----\n" .
 				wordwrap($pubKey, 64, "\n", true) .
