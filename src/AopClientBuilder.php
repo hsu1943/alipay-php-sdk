@@ -1,15 +1,14 @@
 <?php
-
-namespace duckSoft\alipay;
-
-use duckSoft\alipay\aop\AopClient;
-
 /**
  * Created by PhpStorm.
  * User: Huan
  * Date: 2021/1/21
  * Time: 17:05
  */
+namespace duckSoft\alipay;
+
+use duckSoft\alipay\aop\AopClient;
+
 class AopClientBuilder
 {
     private $_client = null;

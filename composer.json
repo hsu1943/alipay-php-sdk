@@ -14,7 +14,7 @@
     "alipay sdk",
     "alipay php sdk"
   ],
-  "lisence": "MIT",
+  "license": "MIT",
   "require": {
     "php": ">=7.1.0"
   },
