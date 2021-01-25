@@ -13,7 +13,7 @@ $bizContent = [
     'out_trade_no' => '系统订单号',
 ];
 $request = new AlipayTradeQueryRequest();
-$request->setBizContent(json_encode($bizContent));
+$request->setBizContent(json_encode($bizContent, JSON_UNESCAPED_UNICODE));
 $config = require __DIR__ . '/AlipayConfig.php';
 try {
     $aop = (new AopClientBuilder($config))->getAopClient();
