@@ -1,9 +1,9 @@
 <?php
 
 $config = [
-    // 支付宝网关
+    // 支付宝网关 此为沙盒测试网关，请修改为正式网关
     'gatewayUrl'            => 'https://openapi.alipaydev.com/gateway.do',
-    // 应用ID
+    // 应用ID 请求改为你的应用appId
     'appId'                 => '2016051900098985',
     // 支付宝公钥
     'alipayrsaPublicKey'    => 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDIgHnOn7LLILlKETd6BFRJ0GqgS2Y3mn1wMQmyh9zEyWlz5p1zrahRahbXAfCfSqshSNfqOmAQzSHRVjCqjsAw1jyqrXaPdKBmr90DIpIxmIyKXv4GGAkPyJ/6FTFY99uhpiq0qadD/uSzQsefWo0aTvP/65zi3eof7TcZ32oWpwIDAQAB',
