@@ -19,11 +19,6 @@ try {
     $aop = (new AopClientBuilder($config))->getAopClient();
     $result = $aop->execute($request);
     $response = (new AopResult($result, $request->getApiMethodName()))->getResponse();
-    if ($aop->rsaCheckV1(json_decode($result, true), null, $config['signType'])) {
-        echo "校验签名成功" .PHP_EOL;
-    } else {
-        echo "校验签名失败" .PHP_EOL;
-    }
     return $response;
 } catch (\ErrorException $e) {
     return ['status' => 'error', 'message' => $e->getMessage()];

@@ -664,13 +664,11 @@ class AopClient {
 	function verify($data, $sign, $rsaPublicKeyFilePath, $signType = 'RSA') {
 
 		if($this->checkEmpty($this->alipayPublicKey)){
-		    echo "checkEmpty 走 1" . PHP_EOL;
 			$pubKey= $this->alipayrsaPublicKey;
 			$res = "-----BEGIN PUBLIC KEY-----\n" .
 				wordwrap($pubKey, 64, "\n", true) .
 				"\n-----END PUBLIC KEY-----";
 		}else {
-            echo "checkEmpty 走 2" . PHP_EOL;
 			//读取公钥文件
 			$pubKey = file_get_contents($rsaPublicKeyFilePath);
 			//转换为openssl格式密钥
