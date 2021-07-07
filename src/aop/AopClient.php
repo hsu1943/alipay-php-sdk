@@ -2,6 +2,8 @@
 
 namespace duckSoft\alipay\aop;
 
+use Exception;
+
 require_once 'AopEncrypt.php';
 
 class AopClient {
