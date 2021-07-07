@@ -927,7 +927,9 @@ class AopClient {
 	}
 
 	function parserJSONSign($responseJSon) {
-
+        if (!isset($responseJSon->sign)) {
+            throw new Exception('invalid app id');
+        }
 		return $responseJSon->sign;
 	}
 
